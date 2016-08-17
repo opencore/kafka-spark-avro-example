@@ -8,7 +8,7 @@
 
   <properties>
     <confluent.version>3.0.0</confluent.version>
-    <spark.version>1.6.2</spark.version>
+    <spark.version>2.0.0</spark.version>
     <avro.version>1.7.7</avro.version>
   </properties>
 
@@ -16,7 +16,7 @@
     <maven>3.0</maven>
   </prerequisites>
 
-  <name>kafka-spark-example</name>
+  <name>avro2jsonkafka</name>
 
   <dependencies>
     <dependency>
@@ -31,28 +31,24 @@
     </dependency>
     <dependency>
       <groupId>org.apache.spark</groupId>
-      <artifactId>spark-streaming-kafka_2.10</artifactId>
+      <artifactId>spark-streaming-kafka-0-10_2.10</artifactId>
       <version>${spark.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.kafka</groupId>
+      <artifactId>kafka-clients</artifactId>
+      <version>0.10.0.0-cp1</version>
     </dependency>
     <dependency>
       <groupId>io.confluent</groupId>
       <artifactId>kafka-avro-serializer</artifactId>
       <version>${confluent.version}</version>
+      <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.avro</groupId>
       <artifactId>avro</artifactId>
       <version>${avro.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.kafka</groupId>
-      <artifactId>kafka_2.10</artifactId>
-      <version>0.8.2.1</version>
-    </dependency>
-    <dependency>
-      <groupId>org.scala-lang</groupId>
-      <artifactId>scala-library</artifactId>
-      <version>2.10.5</version>
     </dependency>
   </dependencies>
 
